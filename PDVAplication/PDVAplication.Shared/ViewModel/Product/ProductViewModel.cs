@@ -9,7 +9,6 @@ namespace PDVAplication.Shared.ViewModel.Product
 {
     public class ProductViewModel
     {
-        [Required]
         public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }

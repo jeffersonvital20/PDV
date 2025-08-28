@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# dependencies
+/node_modules
+
+# production
+/dist
+
+# misc
+/.angular/cache
+.env

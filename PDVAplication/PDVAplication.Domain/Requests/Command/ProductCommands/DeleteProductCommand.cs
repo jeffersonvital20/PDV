@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PDVAplication.Domain.Requests.Command
+namespace PDVAplication.Domain.Requests.Command.ProductCommands
 {
-    public class DeleteCustomerCommand : IRequest<Result<bool>>, IValidatable
+    public class DeleteProductCommand : IRequest<Result<bool>>, IValidatable
     {
-        public DeleteCustomerCommand(Guid id) => Id = id;
+        public DeleteProductCommand(Guid id) => Id = id;
         public Guid Id { get; }
     }
 }

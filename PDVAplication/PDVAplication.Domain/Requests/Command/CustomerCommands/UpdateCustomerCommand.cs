@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PDVAplication.Domain.Requests.Command
+namespace PDVAplication.Domain.Requests.Command.CustomerCommands
 {
     public class UpdateCustomerCommand : IRequest<Result<bool>>, IValidatable
     {

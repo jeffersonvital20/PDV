@@ -1,11 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PDVAplication.Data.Repositories;
 using PDVAplication.Domain.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PDVAplication.Services.Services;
+using PDVAplication.Services.Services.Interface;
 
 namespace PDVAplications.Ioc.Dependeces
 {
@@ -19,6 +16,8 @@ namespace PDVAplications.Ioc.Dependeces
         private static void AddRepositoryDependency(IServiceCollection services)
         {
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }

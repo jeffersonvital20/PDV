@@ -3,14 +3,14 @@ using MediatR;
 using OperationResult;
 using PDVAplication.Domain.Model;
 using PDVAplication.Domain.Repositories.Interfaces;
-using PDVAplication.Domain.Requests.Command;
+using PDVAplication.Domain.Requests.Command.CustomerCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PDVAplication.Domain.RequestHandlers.CommandHandler
+namespace PDVAplication.Domain.RequestHandlers.CommandHandler.CustomerCommands
 {
     public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand, Result<bool>>
     {

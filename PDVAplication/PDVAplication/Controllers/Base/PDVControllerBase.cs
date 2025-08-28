@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OperationResult;
 using PDVAplication.Domain.Exceptions;
@@ -7,6 +8,7 @@ namespace PDVAplication.Controllers.Base
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class PDVControllerBase : ControllerBase
     {
         private readonly IMediator _mediator;

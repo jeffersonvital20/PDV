@@ -9,6 +9,8 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Divino.OperationResult" Version="4.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -20,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PDVAplication.Data\PDVAplication.Data.csproj" />
     <ProjectReference Include="..\PDVAplication.Domain\PDVAplication.Domain.csproj" />
+    <ProjectReference Include="..\PDVAplication.Services\PDVAplication.Services.csproj" />
   </ItemGroup>
 
 </Project>

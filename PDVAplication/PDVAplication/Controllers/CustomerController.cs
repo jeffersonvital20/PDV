@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PDVAplication.Controllers.Base;
-using PDVAplication.Domain.Requests.Command;
-using PDVAplication.Domain.Requests.Query;
+using PDVAplication.Domain.Requests.Command.CustomerCommands;
+using PDVAplication.Domain.Requests.Query.CustomerQuery;
 using PDVAplication.Shared.ViewModel.Customer;
 
 namespace PDVAplication.Controllers

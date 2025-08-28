@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDVAplicatiion.Shared", "PD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDVAplication.Shared", "PDVAplication.Shared\PDVAplication.Shared.csproj", "{0701F97B-B036-4AAA-ADC6-53511AA773CD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDVAplication.Services", "PDVAplication.Services", "{C0ED400A-054F-411F-9B92-02677A87E71B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDVAplication.Services", "PDVAplication.Services\PDVAplication.Services.csproj", "{9D77FDB2-D5A3-4A50-A925-F759CA70ACD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{0701F97B-B036-4AAA-ADC6-53511AA773CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0701F97B-B036-4AAA-ADC6-53511AA773CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0701F97B-B036-4AAA-ADC6-53511AA773CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D77FDB2-D5A3-4A50-A925-F759CA70ACD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D77FDB2-D5A3-4A50-A925-F759CA70ACD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D77FDB2-D5A3-4A50-A925-F759CA70ACD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D77FDB2-D5A3-4A50-A925-F759CA70ACD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,7 @@ Global
 		{50AB1C33-C38C-4338-BD1B-21E9EC5E4806} = {561CAD6A-9D1F-465F-9854-81DBDC0F1476}
 		{9F4498F6-BAE7-4412-B062-933B260968F1} = {6AEBA466-DB55-469B-9497-6017501B5B81}
 		{0701F97B-B036-4AAA-ADC6-53511AA773CD} = {6780DEAB-E5A5-45B4-95FF-F91ECD4A604C}
+		{9D77FDB2-D5A3-4A50-A925-F759CA70ACD8} = {C0ED400A-054F-411F-9B92-02677A87E71B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6A98136-40E7-48B8-B3B5-E1DCC6898A10}

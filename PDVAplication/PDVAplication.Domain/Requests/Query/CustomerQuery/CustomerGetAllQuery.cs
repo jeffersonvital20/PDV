@@ -2,13 +2,8 @@
 using OperationResult;
 using PDVAplication.Domain.Validations;
 using PDVAplication.Shared.ViewModel.Customer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PDVAplication.Domain.Requests.Query
+namespace PDVAplication.Domain.Requests.Query.CustomerQuery
 {
     public class CustomerGetAllQuery :IRequest<Result<List<CustomerViewModel>>>, IValidatable
     {

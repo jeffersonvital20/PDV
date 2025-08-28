@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PDVAplication.Domain.Requests.Query
+namespace PDVAplication.Domain.Requests.Query.CustomerQuery
 {
     public class CustomerGetByIdQuery : IRequest<Result<CustomerByIdViewModel>>, IValidatable
     {

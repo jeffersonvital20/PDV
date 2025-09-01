@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace PDVAplication.Domain.Repositories.Interfaces
 {
-    public interface ICustomerRepository: IBaseRepository<CustomerModel>
+    public interface ISalesRepository : IBaseRepository<SalesModel>
     {
-        CustomerModel GetByCPF(string cpf);
     }
 }

@@ -9,8 +9,8 @@ namespace PDVAplication.Domain.Model
 {
     public class CustomerModel : BaseModel
     {
-        [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public DateTime BirthDate { get; set; }
+        public string? CPF { get; set; }
     }
 }

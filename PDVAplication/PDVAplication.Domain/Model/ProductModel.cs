@@ -21,6 +21,7 @@ namespace PDVAplication.Domain.Model
         public int Amount { get; set; }
         [Required]
         public decimal Price { get; set; }
+        public Guid SaleId { get; set; }
         public ICollection<SalesModel> Sales { get; set; }
     }
 }

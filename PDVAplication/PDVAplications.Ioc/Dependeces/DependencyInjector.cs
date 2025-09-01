@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using PDVAplication.Data.Repositories;
 using PDVAplication.Domain.Repositories.Interfaces;
 using PDVAplication.Services.Services;
@@ -17,6 +18,9 @@ namespace PDVAplications.Ioc.Dependeces
         {
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ISalesRepository, SalesRepository>();
+            services.AddScoped<IProductSaleRepository, ProductSaleRepository>();
+            services.AddScoped<ILogger, Logger<ILogger>>();
             services.AddScoped<ITokenService, TokenService>();
         }
     }

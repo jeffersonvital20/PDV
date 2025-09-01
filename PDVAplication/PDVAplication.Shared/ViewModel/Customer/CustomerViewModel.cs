@@ -8,7 +8,10 @@ namespace PDVAplication.Shared.ViewModel.Customer
 {
     public class CustomerViewModel
     {
-        public string Name { get; set; }
+        public Guid Id { get; set; }
+        public string? Name { get; set; }
         public DateTime BirthDate { get; set; }
+        public string CPF { get; set; }
     }
 }
+

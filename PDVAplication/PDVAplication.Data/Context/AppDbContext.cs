@@ -21,5 +21,6 @@ namespace PDVAplication.Data.Context
         public DbSet<CustomerModel> Customer { get; set; }
         public DbSet<ProductModel> Product { get; set; }
         public DbSet<SalesModel> Sales { get; set; }
+        public DbSet<ProductSaleModel> ProductSales { get; set; }
         }
 }

@@ -1,4 +1,5 @@
-﻿using PDVAplication.Data.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using PDVAplication.Data.Context;
 using PDVAplication.Domain.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,15 +26,34 @@ namespace PDVAplication.Data.Repositories
             Save();
         }
 
-        public IQueryable<T> GetAll() => _context.Set<T>();
+        public IQueryable<T> GetAll()
+    => _context.Set<T>().AsNoTracking();
 
-        public T GetById(Guid id) => _context.Set<T>().Find(id);
+        public T GetById(Guid id)
+        {
+            return _context.Set<T>()
+                               .AsNoTracking()
+                               .FirstOrDefault(e => EF.Property<Guid>(e, "Id") == id);
+        }
 
         public void Save() => _context.SaveChanges();
 
         public void Update(T update)
         {
-            _context.Set<T>().Update(update);
+            var local = _context.Set<T>()
+         .Local
+         .FirstOrDefault(e => EF.Property<Guid>(e, "Id")
+                           == EF.Property<Guid>(update, "Id"));
+
+            if (local != null)
+            {
+                _context.Entry(local).CurrentValues.SetValues(update);
+            }
+            else
+            {
+                _context.Entry(update).State = EntityState.Modified;
+            }
+            // _context.Set<T>().Update(update);
             Save();
         }
     }

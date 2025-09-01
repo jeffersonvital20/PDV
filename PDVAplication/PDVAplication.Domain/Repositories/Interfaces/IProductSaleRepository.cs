@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace PDVAplication.Domain.Repositories.Interfaces
 {
-    public interface ICustomerRepository: IBaseRepository<CustomerModel>
+    public interface IProductSaleRepository :IBaseRepository<ProductSaleModel>
     {
-        CustomerModel GetByCPF(string cpf);
+        ProductSaleModel GetByProductAndSale(Guid ProductId, Guid SaleId);
+        List<ProductSaleModel> GetBySale(Guid SaleId);
     }
 }

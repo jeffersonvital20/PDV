@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PDVAplication.Data.Context;
@@ -11,9 +12,11 @@ using PDVAplication.Data.Context;
 namespace PDVAplication.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250831165712_ajustInsale")]
+    partial class ajustInsale
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,6 +240,7 @@ namespace PDVAplication.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -260,38 +264,14 @@ namespace PDVAplication.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
-                    b.Property<Guid>("SaleId")
+                    b.Property<Guid?>("SalesModelId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SalesModelId");
 
                     b.ToTable("Product");
-                });
-
-            modelBuilder.Entity("PDVAplication.Domain.Model.ProductSaleModel", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<decimal>("DiscountProduct")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("PriceProduct")
-                        .HasColumnType("numeric");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("QuantityProduct")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("SaleId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductSales");
                 });
 
             modelBuilder.Entity("PDVAplication.Domain.Model.SalesModel", b =>
@@ -325,26 +305,17 @@ namespace PDVAplication.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
+                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<decimal>("TotalValue")
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CustomerId");
+
                     b.ToTable("Sales");
-                });
-
-            modelBuilder.Entity("ProductModelSalesModel", b =>
-                {
-                    b.Property<Guid>("ProductsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("SalesId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("ProductsId", "SalesId");
-
-                    b.HasIndex("SalesId");
-
-                    b.ToTable("ProductModelSalesModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -398,19 +369,27 @@ namespace PDVAplication.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProductModelSalesModel", b =>
+            modelBuilder.Entity("PDVAplication.Domain.Model.ProductModel", b =>
                 {
-                    b.HasOne("PDVAplication.Domain.Model.ProductModel", null)
+                    b.HasOne("PDVAplication.Domain.Model.SalesModel", null)
+                        .WithMany("Products")
+                        .HasForeignKey("SalesModelId");
+                });
+
+            modelBuilder.Entity("PDVAplication.Domain.Model.SalesModel", b =>
+                {
+                    b.HasOne("PDVAplication.Domain.Model.CustomerModel", "Customer")
                         .WithMany()
-                        .HasForeignKey("ProductsId")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PDVAplication.Domain.Model.SalesModel", null)
-                        .WithMany()
-                        .HasForeignKey("SalesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("PDVAplication.Domain.Model.SalesModel", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

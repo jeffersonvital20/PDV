@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PDVAplication.Domain.Requests.Command.CustomerCommands;
 using PDVAplication.Domain.Requests.Command.ProductCommands;
+using PDVAplication.Domain.Requests.Command.SaleCommands;
 using PDVAplication.Domain.Requests.Query.CustomerQuery;
 using PDVAplication.Domain.Requests.Query.ProductQuery;
+using PDVAplication.Domain.Requests.Query.SaleQuery;
 
 namespace PDVAplications.Ioc.Dependeces
 {
@@ -16,6 +18,10 @@ namespace PDVAplications.Ioc.Dependeces
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateProductCommand).Assembly));
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ProductGetAllQuery).Assembly));
+            
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(SaleGetAllQuery).Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateSaleCommand).Assembly));
+
         }
     }
 }

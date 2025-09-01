@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace PDVAplication.Shared.ViewModel.Product
 {
-    public class ProductViewModel
+    public class ProductSoldViewModel
     {
+        [Required]
         public Guid Id { get; set; }
         [Required]
         public string? Name { get; set; }
         [Required]
         public int Amount { get; set; }
-        [Required]
-        public decimal Price { get; set; }
     }
 }

@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "a2d3c411-5065-4707-a98e-a0f523e1202f",
+		"name": "Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5727149",
+		"_collection_link": "https://www.postman.com/restless-sunset-6936-2/pdv-aplication/collection/un3xktn/customer?action=share&source=collection_link&creator=5727149"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/Customer/getAll",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Customer",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/Customer/getById?id=01990294-5690-7197-adca-b11a57758cab",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Customer",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "01990294-5690-7197-adca-b11a57758cab"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"teste\",\r\n  \"birthDate\": \"1994-08-31T23:59:39.668Z\",\r\n  \"cpf\": \"05826445878\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Customer/create",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Customer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"01990294-5690-7197-adca-b11a57758cab\",\r\n    \"name\": \"teste da silva\",\r\n    \"birthDate\": \"1994-08-31T23:59:39.668+00:00\",\r\n    \"cpf\": \"05826445878\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Customer/update",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Customer",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/Customer/delete?id=01990294-5690-7197-adca-b11a57758cab",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Customer",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "01990294-5690-7197-adca-b11a57758cab"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

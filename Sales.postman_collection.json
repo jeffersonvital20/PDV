@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "276ced39-5e9a-45e3-97eb-a471f237b994",
+		"name": "Sales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5727149",
+		"_collection_link": "https://www.postman.com/restless-sunset-6936-2/pdv-aplication/collection/auw013e/sales?action=share&source=collection_link&creator=5727149"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Sale/getAll",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer\": {\r\n        \"name\": \"Jefferson Vital Pedrosa\",\r\n        \"birthDate\": \"1992-08-31T23:59:39.668+00:00\",\r\n        \"cpf\": \"05826489678\"\r\n  },\r\n  \"branch\": \"princiapl\",\r\n  \"seller\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Sale/create",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idSale\": \"019902ae-c835-7f30-b059-5228fc0560ab\",\r\n  \"products\": [\r\n     {\r\n        \"id\": \"0199029c-0f34-7401-8177-134124fde898\",\r\n        \"name\": \"Arroz\",\r\n        \"amount\": 10,\r\n        \"price\": 4.5\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Sale/updateProduct",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"updateProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/Sale/getById?id=019902ae-c835-7f30-b059-5228fc0560ab",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "019902ae-c835-7f30-b059-5228fc0560ab"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FinishSale",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"019902ae-c835-7f30-b059-5228fc0560ab\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Sale/FinishSale",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"FinishSale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelSale",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\" : \"019902ae-c835-7f30-b059-5228fc0560ab\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/Sale/cancelSale",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"cancelSale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleleProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{Url}}/Sale/deleteProduct?ProductId=0199029c-0f34-7401-8177-134124fde898&SaleId=019902ae-c835-7f30-b059-5228fc0560ab",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"Sale",
+						"deleteProduct"
+					],
+					"query": [
+						{
+							"key": "ProductId",
+							"value": "0199029c-0f34-7401-8177-134124fde898"
+						},
+						{
+							"key": "SaleId",
+							"value": "019902ae-c835-7f30-b059-5228fc0560ab"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

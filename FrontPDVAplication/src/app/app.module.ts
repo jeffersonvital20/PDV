@@ -10,13 +10,17 @@ import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { ProductFormComponent } from './pages/product/product-form/product-form.component';
+import { ProductListComponent } from './pages/product/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductFormComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
